@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using PictureChoosingUI;
 using UnityEngine;
+using View.PictureChoosingUI;
 
 namespace Configs
 {

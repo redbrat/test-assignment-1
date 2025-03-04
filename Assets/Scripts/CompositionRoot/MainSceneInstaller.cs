@@ -1,7 +1,9 @@
 using Configs;
-using CoreGameStarter;
-using PictureChoosingUI;
+using Controller;
+using Controller.CoreGameStarter;
+using Model;
 using UnityEngine;
+using View.PictureChoosingUI;
 using Zenject;
 
 namespace CompositionRoot
@@ -19,7 +21,7 @@ namespace CompositionRoot
             Container.Bind<IFactory<int, Transform, PictureView>>().To<PictureViewsFactory>().AsSingle();
             
             Container.Bind<CoreGameModel>().AsSingle();
-            Container.Bind<CoreGameStartingController>().AsSingle();
+            Container.Bind<CoreGameInfoController>().AsSingle();
             Container.Bind<ICoreGameStarter>().To<MockCoreGameStarter>().AsSingle();
         }
     }

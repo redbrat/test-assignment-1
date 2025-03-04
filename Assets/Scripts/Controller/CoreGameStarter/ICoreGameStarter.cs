@@ -1,4 +1,4 @@
-namespace CoreGameStarter
+namespace Controller.CoreGameStarter
 {
     public interface ICoreGameStarter
     {

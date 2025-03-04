@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
-using PictureChoosingUI;
 using UnityEngine;
+using View.PictureChoosingUI;
 using Zenject;
 
 namespace CompositionRoot

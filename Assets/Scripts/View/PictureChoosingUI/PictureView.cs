@@ -1,13 +1,14 @@
 using Configs;
+using Controller;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace PictureChoosingUI
+namespace View.PictureChoosingUI
 {
     public class PictureView : MonoBehaviour
     {
-        [Inject] private readonly CoreGameStartingController coreGameStartingController;
+        [Inject] private readonly CoreGameInfoController coreGameStartingController;
         [Inject] private readonly PicturesConfig picturesConfig;
 
         [SerializeField] private Image image;

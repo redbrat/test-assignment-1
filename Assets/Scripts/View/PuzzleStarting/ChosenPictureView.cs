@@ -1,12 +1,13 @@
+using Controller;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace PuzzleStartingUI
+namespace View.PuzzleStarting
 {
     public class ChosenPictureView : MonoBehaviour
     {
-        [Inject] private readonly CoreGameStartingController coreGameStartingController;
+        [Inject] private readonly CoreGameInfoController coreGameStartingController;
 
         [SerializeField] private Image pictureImage;
         
@@ -22,6 +23,14 @@ namespace PuzzleStartingUI
             if (coreGameStartingController.GetPictureIsChosen())
             {
                 pictureImage.sprite = coreGameStartingController.GetPictureSprite();
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (coreGameStartingController != null)
+            {
+                coreGameStartingController.PictureIsChosen -= OnPictureIsChosen;
             }
         }
     }

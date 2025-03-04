@@ -1633,7 +1633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1300005143
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2067,6 +2067,7 @@ GameObject:
   - component: {fileID: 1698040962}
   - component: {fileID: 1698040961}
   - component: {fileID: 1698040963}
+  - component: {fileID: 1698040964}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -2088,6 +2089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
   _monoInstallers:
+  - {fileID: 1698040964}
   - {fileID: 1698040963}
   _installerPrefabs: []
   _autoRun: 1
@@ -2135,6 +2137,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   picturesConfig: {fileID: 11400000, guid: 9534de1b23456174884d4cd0b0b960e2, type: 2}
   pictureViewPrefab: {fileID: 4968146923401973450, guid: bef1058d065fafb4aa0f87dc64779759, type: 3}
+--- !u!114 &1698040964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698040960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7321bcbb73cdbb14d8e112cecc5961be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleStartingView: {fileID: 96179103}
 --- !u!1 &1735694078
 GameObject:
   m_ObjectHideFlags: 0

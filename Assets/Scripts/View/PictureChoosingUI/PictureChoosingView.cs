@@ -2,7 +2,7 @@ using Configs;
 using UnityEngine;
 using Zenject;
 
-namespace PictureChoosingUI
+namespace View.PictureChoosingUI
 {
     public class PictureChoosingView : MonoBehaviour
     {

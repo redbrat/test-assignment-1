@@ -1,11 +1,12 @@
+using Controller;
 using UnityEngine;
 using Zenject;
 
-namespace PuzzleStartingUI
+namespace View.PuzzleStarting
 {
     public class PatternChoosingButtonView : MonoBehaviour
     {
-        [Inject] private readonly CoreGameStartingController coreGameStartingController;
+        [Inject] private readonly CoreGameInfoController coreGameStartingController;
         
         [SerializeField] private int patternId;
         [SerializeField] private GameObject selectionFrame;
@@ -27,6 +28,14 @@ namespace PuzzleStartingUI
         public void OnClick()
         {
             puzzleStartingView.OnPatternClick(patternId);
+        }
+
+        private void OnDestroy()
+        {
+            if (coreGameStartingController != null)
+            {
+                coreGameStartingController.PatternIsChosen -= OnPatternIsChosen;
+            }
         }
     }
 }

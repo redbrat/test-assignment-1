@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace CoreGameStarter
+namespace Controller.CoreGameStarter
 {
     [UsedImplicitly]
     public class MockCoreGameStarter : ICoreGameStarter
