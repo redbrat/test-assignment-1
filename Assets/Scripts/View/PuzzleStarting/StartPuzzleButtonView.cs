@@ -9,7 +9,7 @@ namespace View.PuzzleStarting
     {
         [Inject] private readonly CoreGameInfoController coreGameStartingController;
         
-        [SerializeField] private Button button;
+        [SerializeField] private Button[] startButtons;
         
         [Inject]
         private void Init()
@@ -21,7 +21,10 @@ namespace View.PuzzleStarting
         private void OnPatternIsChosen()
         {
             var patternIsChosen = coreGameStartingController.GetPatternIsChosen();
-            button.interactable = patternIsChosen;
+            foreach (var startButton in startButtons)
+            {
+                startButton.interactable = patternIsChosen;
+            }
         }
 
         private void OnDestroy()

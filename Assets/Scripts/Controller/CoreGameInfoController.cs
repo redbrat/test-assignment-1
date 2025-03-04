@@ -1,6 +1,7 @@
 using System;
 using Configs;
 using Controller.CoreGameStarter;
+using Controller.CoreGameStarter.StartingStrategies;
 using Controller.DialogsSystem;
 using JetBrains.Annotations;
 using Model;
@@ -14,12 +15,13 @@ namespace Controller
     {
         public event Action PictureIsChosen;
         public event Action PatternIsChosen;
-    
+
         [Inject] private readonly CoreGameModel coreGameModel;
         [Inject] private readonly ICoreGameStarter coreGameStarter;
         [Inject] private readonly PicturesConfig picturesConfig;
         [Inject] private readonly DialogSystem dialogSystem;
-    
+        [Inject] private readonly IFactory<GamePaymentType, IGameStartingStrategy> gameStartStrategyController;
+
         public void ChoosePicture(int pictureId)
         {
             coreGameModel.SetPictureId(pictureId);
@@ -32,9 +34,10 @@ namespace Controller
             PatternIsChosen?.Invoke();
         }
 
-        public void StartCoreGame()
+        public void StartCoreGame(GamePaymentType gamePaymentType)
         {
-            coreGameStarter.StartCoreGame(coreGameModel.PatternId, coreGameModel.PictureId);
+            coreGameStarter.StartCoreGame(coreGameModel.PatternId, coreGameModel.PictureId,
+                gameStartStrategyController.Create(gamePaymentType));
         }
 
         public bool GetPictureIsChosen()

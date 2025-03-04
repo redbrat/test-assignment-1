@@ -1,6 +1,9 @@
 using Configs;
 using Controller;
+using Controller.AdsSystem;
 using Controller.CoreGameStarter;
+using Controller.CoreGameStarter.StartingStrategies;
+using Controller.Economy;
 using Model;
 using UnityEngine;
 using View.PictureChoosingUI;
@@ -19,10 +22,14 @@ namespace CompositionRoot
             Container.BindInstance(pictureViewPrefab);
             
             Container.Bind<IFactory<int, Transform, PictureView>>().To<PictureViewsFactory>().AsSingle();
+            Container.Bind<IFactory<GamePaymentType, IGameStartingStrategy>>().To<GameStarterStrategyFactory>()
+                .AsSingle();
             
             Container.Bind<CoreGameModel>().AsSingle();
             Container.Bind<CoreGameInfoController>().AsSingle();
             Container.Bind<ICoreGameStarter>().To<MockCoreGameStarter>().AsSingle();
+            Container.Bind<IEconomyController>().To<MockEconomyController>().AsSingle();
+            Container.Bind<IAdsSystem>().To<MockAdsSystem>().AsSingle();
         }
     }
 }

@@ -1,4 +1,5 @@
 using Controller;
+using Controller.CoreGameStarter;
 using Controller.DialogsSystem;
 using UnityEngine;
 using Zenject;
@@ -23,9 +24,19 @@ namespace View.PuzzleStarting
             }
         }
 
-        public void OnStartClick()
+        public void OnFreeStartClick()
         {
-            coreGameStartingController.StartCoreGame();
+            coreGameStartingController.StartCoreGame(GamePaymentType.Free);
+        }
+
+        public void OnCoinsStartClick()
+        {
+            coreGameStartingController.StartCoreGame(GamePaymentType.Coins);
+        }
+
+        public void OnAdsStartClick()
+        {
+            coreGameStartingController.StartCoreGame(GamePaymentType.Ads);
         }
 
         public void OnShadowClick()
