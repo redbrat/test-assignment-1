@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00548cb457343ba4cb2ed4081f576287, type: 3}
+  m_Name: PictureView
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 34d4a231144bc2740910187897d5c789, type: 3}
+  - {fileID: 21300000, guid: e2223a18b918da6428d3f3bb0ff2b809, type: 3}
+  - {fileID: 21300000, guid: 25532e53cedac984285003f9849d9ec0, type: 3}
+  - {fileID: 21300000, guid: 4ea19b89fd6c2cf4789f620e59f16efa, type: 3}
+  - {fileID: 21300000, guid: f16d60611cc8a9e4d9ec0e53f50fcce8, type: 3}
+  - {fileID: 21300000, guid: 24d6c87497c29ed4fa381443a049bc07, type: 3}
+  - {fileID: 21300000, guid: 6bd2d26ebf27e1942a56371e15097e7b, type: 3}
+  - {fileID: 21300000, guid: 84661d1cfdc023341bd7b88a8f25e642, type: 3}
+  - {fileID: 21300000, guid: c745e4eb34f47554c931b3da6ce14a61, type: 3}
